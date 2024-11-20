@@ -38,4 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tutorialPesawat.unity
     guid: 0a7ed8cf397465445805e830206a59a5
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 90240710101de4740ab4150e03cb6cc6, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: ccbfcdf395c6e9e44a8dc234ec94740b, type: 2}
