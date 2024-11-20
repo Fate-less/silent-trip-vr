@@ -1,0 +1,402 @@
+fileFormatVersion: 2
+guid: 070c9c8513fd54c4380fd2d4d600836a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 135
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pramugari-idle_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 176
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76121ee626bda124485a6981b26d413f
+      internalID: 956633510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 176
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43bb356fd5856374a8cabb4f8b4786a1
+      internalID: -1018664741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_7
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 0
+        width: 176
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800d0bdfb33f2c340a556f71f8b78c90
+      internalID: 945281572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_10
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 0
+        width: 176
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5fb180200564a49b7b7c7e00334baa
+      internalID: -1041625307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_13
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 0
+        width: 176
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20640f08e54fc3c4597b75a8cc2f7038
+      internalID: -49314015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_16
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 0
+        width: 176
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cfa3fd1efa01e84bb5db62a6b6c4f42
+      internalID: 1841694800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_19
+      rect:
+        serializedVersion: 2
+        x: 1580
+        y: 0
+        width: 176
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bd32b065c8a56a44bd7d0e2e2a693af
+      internalID: 760280737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_21
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 0
+        width: 176
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc4dbfb35006f4f42ba7714b434c1af0
+      internalID: -50539784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_23
+      rect:
+        serializedVersion: 2
+        x: 2092
+        y: 0
+        width: 176
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ff0ca2ed4d3044abc758103f644872
+      internalID: -2050803252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_25
+      rect:
+        serializedVersion: 2
+        x: 2348
+        y: 0
+        width: 176
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9700a6662244a7845b9f8458ad3269ce
+      internalID: 1607772620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_27
+      rect:
+        serializedVersion: 2
+        x: 2604
+        y: 0
+        width: 176
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25645cbd3c84f9045ba1e0caf1b2843c
+      internalID: 2044862591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pramugari-idle_29
+      rect:
+        serializedVersion: 2
+        x: 2860
+        y: 0
+        width: 176
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e642c75fba317b4f983fc1fb36918b3
+      internalID: -960835521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: d8e89182f9358fe4aa000c84fdd421b0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Pramugari-idle_0: 1721348479
+      Pramugari-idle_1: 956633510
+      Pramugari-idle_10: -1041625307
+      Pramugari-idle_11: 102271758
+      Pramugari-idle_12: -999118538
+      Pramugari-idle_13: -49314015
+      Pramugari-idle_14: -1275827316
+      Pramugari-idle_15: -2074345024
+      Pramugari-idle_16: 1841694800
+      Pramugari-idle_17: -19189649
+      Pramugari-idle_18: -1794019493
+      Pramugari-idle_19: 760280737
+      Pramugari-idle_2: 2052394346
+      Pramugari-idle_20: 818281201
+      Pramugari-idle_21: -50539784
+      Pramugari-idle_22: -876102951
+      Pramugari-idle_23: -2050803252
+      Pramugari-idle_24: 2114264891
+      Pramugari-idle_25: 1607772620
+      Pramugari-idle_26: -1206610888
+      Pramugari-idle_27: 2044862591
+      Pramugari-idle_28: -1896390939
+      Pramugari-idle_29: -960835521
+      Pramugari-idle_3: -1729579729
+      Pramugari-idle_30: -95942868
+      Pramugari-idle_31: 1510035301
+      Pramugari-idle_32: -1678696219
+      Pramugari-idle_33: 1520374689
+      Pramugari-idle_34: -769196143
+      Pramugari-idle_35: 1598857413
+      Pramugari-idle_4: -1018664741
+      Pramugari-idle_5: 411199910
+      Pramugari-idle_6: -394827546
+      Pramugari-idle_7: 945281572
+      Pramugari-idle_8: 1925843289
+      Pramugari-idle_9: -1702825082
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
