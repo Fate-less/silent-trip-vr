@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2705215ac5b84b70bacc50632be6e391, type: 3}
   m_Name: TMP Settings
   m_EditorClassIdentifier: 
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_enableKerning: 1
   m_enableExtraPadding: 0
   m_enableTintAllSprites: 0
@@ -29,7 +29,14 @@ MonoBehaviour:
   m_defaultTextMeshProTextContainerSize: {x: 20, y: 5}
   m_defaultTextMeshProUITextContainerSize: {x: 200, y: 50}
   m_autoSizeTextContainer: 0
-  m_fallbackFontAssets: []
+  m_IsTextObjectScaleStatic: 0
+  m_fallbackFontAssets:
+  - {fileID: 11400000, guid: cc47741564acb0948b50c74cbd719576, type: 2}
+  - {fileID: 11400000, guid: 02e85d09a4534eb4f9647105fec4357f, type: 2}
+  - {fileID: 11400000, guid: 8dbc34e4b405108489fa68d3554c22db, type: 2}
+  - {fileID: 11400000, guid: ffac94960a1b0ac4383349fb77d1f356, type: 2}
+  - {fileID: 11400000, guid: 758668f34bbb13041b7ef4aec820d09f, type: 2}
+  - {fileID: 11400000, guid: f573fd08b29e234449174776fb3c0101, type: 2}
   m_matchMaterialPreset: 1
   m_defaultSpriteAsset: {fileID: 11400000, guid: c41005c129ba4d66911b75229fd70b45,
     type: 2}

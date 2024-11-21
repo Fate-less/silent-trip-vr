@@ -8,6 +8,8 @@ TagManager:
   - Bomb
   - Goal
   - Border
+  - Speech
+  - TTS
   layers:
   - Default
   - TransparentFX

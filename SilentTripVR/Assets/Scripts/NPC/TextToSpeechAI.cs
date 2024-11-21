@@ -1,0 +1,61 @@
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using System.Threading.Tasks;
+using UnityEngine;
+using Microsoft.CognitiveServices.Speech;
+
+public class TextToSpeechAI : MonoBehaviour
+{
+    // Azure Speech Service API Key and Region
+    private string speechKey = "9R9jmHFbcjc5izuChKI0lEgQ6Br3GBVhaZP6VJNSdCUa5XwnQwCwJQQJ99AKACqBBLyXJ3w3AAAYACOGCJNw"; // Replace with your Azure API Key
+    private string serviceRegion = "southeastasia"; // Replace with your Azure Region (e.g., "eastus")
+
+    // Speech synthesizer
+    private SpeechSynthesizer synthesizer;
+
+    private void Start()
+    {
+        // Initialize the Speech Synthesizer
+        var config = SpeechConfig.FromSubscription(speechKey, serviceRegion);
+        synthesizer = new SpeechSynthesizer(config);
+    }
+
+    public async void SpeakResponse(string responseText)
+    {
+        if (string.IsNullOrWhiteSpace(responseText))
+        {
+            Debug.LogWarning("No text provided for speech synthesis.");
+            return;
+        }
+
+        try
+        {
+            Debug.Log("Speaking: " + responseText);
+
+            // Perform speech synthesis
+            using (var result = await synthesizer.SpeakTextAsync(responseText))
+            {
+                if (result.Reason == ResultReason.SynthesizingAudioCompleted)
+                {
+                    Debug.Log("Speech synthesis succeeded.");
+                }
+                else
+                {
+                    Debug.LogError($"Speech synthesis failed. Reason: {result.Reason}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("An error occurred during speech synthesis: " + ex.Message);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // Dispose the synthesizer when the script is destroyed
+        synthesizer?.Dispose();
+    }
+}
+
