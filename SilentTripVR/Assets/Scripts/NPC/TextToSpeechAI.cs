@@ -4,6 +4,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using Microsoft.CognitiveServices.Speech;
+using LLMUnitySamples;
 
 public class TextToSpeechAI : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class TextToSpeechAI : MonoBehaviour
 
     // Speech synthesizer
     private SpeechSynthesizer synthesizer;
+    public SimpleInteraction LLM_Interaction;
 
     private void Start()
     {
@@ -39,6 +41,7 @@ public class TextToSpeechAI : MonoBehaviour
                 if (result.Reason == ResultReason.SynthesizingAudioCompleted)
                 {
                     Debug.Log("Speech synthesis succeeded.");
+                    LLM_Interaction.HideText();
                 }
                 else
                 {
