@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using LLMUnitySamples;
 
 public class StareDetection : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class StareDetection : MonoBehaviour
     public GameObject playerCamera; // Reference to the player's camera
     public bool isStaring = false; // Flag to track if the player is staring at the object
     public GameObject eyeObject;
-
+    public SimpleInteraction simpleInteraction;
 
     private float stareTimer = 0.0f;
 
