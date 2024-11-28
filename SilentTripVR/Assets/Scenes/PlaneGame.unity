@@ -289,7 +289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.283569, y: 1.0000305}
+  m_AnchoredPosition: {x: -10.283569, y: 1.000061}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &55474508
@@ -1872,16 +1872,7 @@ MonoBehaviour:
   stareDurationThreshold: 3
   playerCamera: {fileID: 1554706637}
   isStaring: 0
-  cameraScript: {fileID: 1554706647}
   eyeObject: {fileID: 127776481}
-  playerAudio: {fileID: 1835675969}
-  heartbeatSFX: {fileID: 8300000, guid: 62453870c25d5664f8bba4f03abbaf27, type: 3}
-  anxietyMeter: {fileID: 2087582988}
-  gadgetInteract: {fileID: 2087582982}
-  audioHandler: {fileID: 226677917}
-  nodScript: {fileID: 1554706638}
-  eventManager: {fileID: 572409}
-  subtitleTMP: {fileID: 66916820}
 --- !u!95 &187948911
 Animator:
   serializedVersion: 5
@@ -3322,7 +3313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.37100002, y: 0.11800001}
   m_AnchorMax: {x: 0.6295418, y: 0.16700001}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: -0.00012207031}
   m_SizeDelta: {x: 0.0001, y: -0.000038147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307706313
@@ -3397,7 +3388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.100875005, y: 0.1814815}
   m_AnchorMax: {x: 0.19347917, y: 0.2757778}
-  m_AnchoredPosition: {x: -0.71728516, y: -0.089904785}
+  m_AnchoredPosition: {x: -0.71728516, y: -0.08984375}
   m_SizeDelta: {x: -1.4346, y: 0.0497}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355321599
@@ -4126,7 +4117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.10447917, y: 0.134}
   m_AnchorMax: {x: 0.33247918, y: 0.16700001}
-  m_AnchoredPosition: {x: -0.10192871, y: 0.11999512}
+  m_AnchoredPosition: {x: -0.10180664, y: 0.11999512}
   m_SizeDelta: {x: 0.20602, y: -0.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &472533134
@@ -4524,7 +4515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.127, y: 0.054}
   m_AnchorMax: {x: 0.14400001, y: 0.121666655}
-  m_AnchoredPosition: {x: 0.049926758, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0.049804688, y: 0.00012207031}
   m_SizeDelta: {x: 8.285, y: 18.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513478681
@@ -6734,7 +6725,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18723558, y: 0}
   m_AnchorMax: {x: 0.81210923, y: 0.078}
-  m_AnchoredPosition: {x: 0.009498596, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0.009490967, y: -0.000030517578}
   m_SizeDelta: {x: -0.01999998, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897481444
@@ -8883,7 +8874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18100001, y: 0.19414815}
   m_AnchorMax: {x: 0.22700001, y: 0.24051853}
-  m_AnchoredPosition: {x: -0.00012207031, y: 0.039978027}
+  m_AnchoredPosition: {x: -0.00024414062, y: 0.039978027}
   m_SizeDelta: {x: -0.0001, y: -0.079956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221888671
@@ -8933,7 +8924,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35.7
+  m_fontSize: 71.45
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10122,16 +10113,7 @@ MonoBehaviour:
   stareDurationThreshold: 3
   playerCamera: {fileID: 1554706637}
   isStaring: 0
-  cameraScript: {fileID: 1554706647}
   eyeObject: {fileID: 476445796}
-  playerAudio: {fileID: 1835675969}
-  heartbeatSFX: {fileID: 8300000, guid: 62453870c25d5664f8bba4f03abbaf27, type: 3}
-  anxietyMeter: {fileID: 2087582988}
-  gadgetInteract: {fileID: 2087582982}
-  audioHandler: {fileID: 226677917}
-  nodScript: {fileID: 1554706638}
-  eventManager: {fileID: 572409}
-  subtitleTMP: {fileID: 66916820}
 --- !u!95 &1381453095
 Animator:
   serializedVersion: 5
@@ -10188,7 +10170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.76100004, y: 0.8122593}
   m_AnchorMax: {x: 0.94100004, y: 0.94540745}
-  m_AnchoredPosition: {x: -0.4000244, y: -2.2662048}
+  m_AnchoredPosition: {x: -0.4000244, y: -2.2662354}
   m_SizeDelta: {x: 0.32543945, y: -2.5260925}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1383627722
@@ -10238,7 +10220,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100.9
+  m_fontSize: 148
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10390,16 +10372,7 @@ MonoBehaviour:
   stareDurationThreshold: 3
   playerCamera: {fileID: 1554706637}
   isStaring: 0
-  cameraScript: {fileID: 1554706647}
   eyeObject: {fileID: 1185377097}
-  playerAudio: {fileID: 1835675969}
-  heartbeatSFX: {fileID: 8300000, guid: 62453870c25d5664f8bba4f03abbaf27, type: 3}
-  anxietyMeter: {fileID: 2087582988}
-  gadgetInteract: {fileID: 2087582982}
-  audioHandler: {fileID: 226677917}
-  nodScript: {fileID: 1554706638}
-  eventManager: {fileID: 572409}
-  subtitleTMP: {fileID: 66916820}
 --- !u!95 &1384281341
 Animator:
   serializedVersion: 5
@@ -12229,16 +12202,7 @@ MonoBehaviour:
   stareDurationThreshold: 3
   playerCamera: {fileID: 1554706637}
   isStaring: 0
-  cameraScript: {fileID: 1554706647}
   eyeObject: {fileID: 886366183}
-  playerAudio: {fileID: 1835675969}
-  heartbeatSFX: {fileID: 8300000, guid: 62453870c25d5664f8bba4f03abbaf27, type: 3}
-  anxietyMeter: {fileID: 2087582988}
-  gadgetInteract: {fileID: 2087582982}
-  audioHandler: {fileID: 226677917}
-  nodScript: {fileID: 1554706638}
-  eventManager: {fileID: 572409}
-  subtitleTMP: {fileID: 66916820}
 --- !u!95 &1800935341
 Animator:
   serializedVersion: 5
@@ -13009,7 +12973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.49166664, y: 0.86700004}
   m_AnchorMax: {x: 0.509, y: 0.8967037}
-  m_AnchoredPosition: {x: 0, y: -0.000091552734}
+  m_AnchoredPosition: {x: 0, y: -0.00012207031}
   m_SizeDelta: {x: -0.000038147, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885283801
@@ -13626,7 +13590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.07752084, y: 0.13862965}
   m_AnchorMax: {x: 0.3404792, y: 0.19414815}
-  m_AnchoredPosition: {x: 0.005554199, y: 0.5277405}
+  m_AnchoredPosition: {x: 0.005493164, y: 0.52770996}
   m_SizeDelta: {x: -0.018402, y: 0.121}
   m_Pivot: {x: -0.30054554, y: 3.3651097}
 --- !u!114 &2066629101
@@ -13717,7 +13681,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.767, y: 0.17500001}
   m_AnchorMax: {x: 0.8255209, y: 0.28100002}
-  m_AnchoredPosition: {x: 0, y: 0.25006104}
+  m_AnchoredPosition: {x: 0, y: 0.25012207}
   m_SizeDelta: {x: 0, y: -0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070729222
@@ -14142,7 +14106,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.105000004, y: 0.054}
   m_AnchorMax: {x: 0.12200001, y: 0.121666655}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0.00012207031}
   m_SizeDelta: {x: 8.16, y: 18.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104134829
