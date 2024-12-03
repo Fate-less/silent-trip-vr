@@ -190,27 +190,24 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Frame_0
+    - name: LogoPintu_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 488fb476e28f13d48b5be0661919f731
-    - name: Frame_1
+    - name: LogoPintu_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 0c6b49b76efe5f349af988042b8d468b
-    - name: Frame_2
+    - name: LogoPintu_Frame_2
       frameIndex: 2
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
