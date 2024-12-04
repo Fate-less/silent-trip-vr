@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TembokKereta
+  m_Name: Kayu
   m_Shader: {fileID: -6465566751694194690, guid: 2a0c14a1c37f80a4dafd91a0bf38e108, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 60d91ceb895b6cb488aebbb463ea7b6c, type: 3}
+        m_Texture: {fileID: 2800000, guid: e1bbbf717d9f81f4c901199602ed7113, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -71,7 +71,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mettalic_Map:
-        m_Texture: {fileID: 2800000, guid: 98083db3607100a41ad9503353b3393f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2feae3305ff8f234fb70981dc0a0c237, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
@@ -91,11 +91,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondaryTexture:
-        m_Texture: {fileID: 2800000, guid: 7d062d1c3d46fe84fa3f196934d67595, type: 3}
+        m_Texture: {fileID: 2800000, guid: f191f495972f6244d9669701434929d6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Smothness:
-        m_Texture: {fileID: 2800000, guid: 9158f018224e20744b1682f636b9e3fb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2feae3305ff8f234fb70981dc0a0c237, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:

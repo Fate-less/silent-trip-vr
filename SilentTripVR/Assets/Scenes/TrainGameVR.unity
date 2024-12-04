@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3417,7 +3416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdace044e7fa634fbbdfcb7c02cd099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0
+  radius: 34.32
 --- !u!135 &746334081
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5752,6 +5751,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7924768682668192376, guid: a8d8c8b31b6bfcd459d10272013d0bfc, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: ca306f62f965dc548a1a991ca131c690, type: 2}
     - target: {fileID: -7053541042063891421, guid: a8d8c8b31b6bfcd459d10272013d0bfc, type: 3}
       propertyPath: m_Antialiasing
       value: 1
@@ -5841,9 +5844,25 @@ PrefabInstance:
       value: KeretaBaru
       objectReference: {fileID: 0}
     - target: {fileID: 3137084255126761879, guid: a8d8c8b31b6bfcd459d10272013d0bfc, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6c64f22aff05714581baea8bab561b5, type: 2}
+    - target: {fileID: 3137084255126761879, guid: a8d8c8b31b6bfcd459d10272013d0bfc, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 664c2489d61635d44971f57892c68a0b, type: 2}
+    - target: {fileID: 3137084255126761879, guid: a8d8c8b31b6bfcd459d10272013d0bfc, type: 3}
       propertyPath: m_Materials.Array.data[9]
       value: 
       objectReference: {fileID: 2100000, guid: 6e34576ec6c0c8e4aba8a410a6f02c37, type: 2}
+    - target: {fileID: 3137084255126761879, guid: a8d8c8b31b6bfcd459d10272013d0bfc, type: 3}
+      propertyPath: m_Materials.Array.data[10]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3930e6cfb1e5be34791898d63e2acf35, type: 2}
+    - target: {fileID: 4186442033398422132, guid: a8d8c8b31b6bfcd459d10272013d0bfc, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: ca306f62f965dc548a1a991ca131c690, type: 2}
     - target: {fileID: 4865064391339405807, guid: a8d8c8b31b6bfcd459d10272013d0bfc, type: 3}
       propertyPath: m_LocalPosition.z
       value: -4.46

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TembokKereta
+  m_Name: KotakSebelahPintu
   m_Shader: {fileID: -6465566751694194690, guid: 2a0c14a1c37f80a4dafd91a0bf38e108, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -63,7 +63,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 60d91ceb895b6cb488aebbb463ea7b6c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 61736e31f9190594792ccf12e035ea6f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -71,7 +71,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Mettalic_Map:
-        m_Texture: {fileID: 2800000, guid: 98083db3607100a41ad9503353b3393f, type: 3}
+        m_Texture: {fileID: 2800000, guid: b2a5a7b5fe9133a4baace076496fcf8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
@@ -86,12 +86,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Roughness:
-        m_Texture: {fileID: 2800000, guid: 9158f018224e20744b1682f636b9e3fb, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _SecondaryTexture:
-        m_Texture: {fileID: 2800000, guid: 7d062d1c3d46fe84fa3f196934d67595, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4c3b225d57df5e4449f0d876f87d5aa4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Smothness:
@@ -130,7 +126,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _EdgeWidth: 0.17
+    - _EdgeWidth: 0.1
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0.2
@@ -153,7 +149,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _UseAoMap: 0
-    - _UseColorMap: 0
+    - _UseColorMap: 1
     - _UseEmissiveMap: 0
     - _UseMetallicMap: 0
     - _UseNormalMap: 0
