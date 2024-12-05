@@ -9,6 +9,7 @@ public class SpeechToTextAI : MonoBehaviour
 {
     private SpeechRecognizer recognizer;
     public SimpleInteraction LLM_Interaction;
+    public TaskCompleteDetection LLM_Task;
 
     // Replace with your Azure for Students Speech API key and region
     private string speechKey = "9R9jmHFbcjc5izuChKI0lEgQ6Br3GBVhaZP6VJNSdCUa5XwnQwCwJQQJ99AKACqBBLyXJ3w3AAAYACOGCJNw";
@@ -22,6 +23,7 @@ public class SpeechToTextAI : MonoBehaviour
 
     void Start()
     {
+        LLM_Task = GameObject.Find("LLMTask").GetComponent<TaskCompleteDetection>();
         InitializeRecognizer();
     }
 
@@ -128,6 +130,7 @@ private IEnumerator StopRecognitionCoroutine()
     {
         // Send the recognized text to Llama
         LLM_Interaction.onInputFieldSubmit(recognizedText);
+        LLM_Task.onInputFieldSubmit(recognizedText);
         Debug.Log("Recognized text: " + recognizedText);
     }
 

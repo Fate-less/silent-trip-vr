@@ -6,24 +6,33 @@ using LLMUnitySamples;
 
 public class StareDetection : MonoBehaviour
 {
-    public float stareDurationThreshold = 3.0f; // Duration threshold for triggering the event
-    public GameObject playerCamera; // Reference to the player's camera
-    public bool isStaring = false; // Flag to track if the player is staring at the object
-    public GameObject eyeObject;
-    public SimpleInteraction simpleInteraction;
+    public float stareDurationThreshold = 3.0f;
+    public bool isStaring = false;
+    private SimpleInteraction chatbotAI;
+    private DomainExpansion domainExpansion;
+    private GameObject playerCamera;
+    private bool domainIsOn = false;
+    private SpeechToTextAI speechToTextAI;
+    private TextToSpeechAI textToSpeechAI;
 
     private float stareTimer = 0.0f;
 
+    private void Start()
+    {
+        domainExpansion = GetComponent<DomainExpansion>();
+        playerCamera = GameObject.Find("Main Camera");
+        chatbotAI = GetComponent<SimpleInteraction>();
+        speechToTextAI = GameObject.Find("SpeechManager").GetComponent<SpeechToTextAI>();
+        textToSpeechAI = GameObject.Find("TTSManager").GetComponent<TextToSpeechAI>();
+    }
+
     void Update()
     {
-        // Check if the player is looking at the object
         Vector3 playerToTarget = transform.position - playerCamera.transform.position;
         float angle = Vector3.Angle(playerCamera.transform.forward, playerToTarget);
-        if (angle < 30f) // Adjust this angle to define the threshold for "staring"
+        if (angle < 45f)
         {
-            // Increment the stare timer if the player is looking at the object
             stareTimer += Time.deltaTime;
-            // Trigger the event if the stare duration exceeds the threshold
             if (stareTimer >= stareDurationThreshold && !isStaring)
             {
                 eyeStare();
@@ -31,29 +40,27 @@ public class StareDetection : MonoBehaviour
         }
         else
         {
-            // Reset the stare timer if the player looks away from the object
-            if (eyeObject.activeInHierarchy)
+            if (domainIsOn)
             {
                 isStaring = false;
-                eyeObject.GetComponent<Animator>().SetBool("isStaring", false);
-                eyeObject.GetComponent<Animator>().Play("EyeClose");
+                domainIsOn = false;
                 stareTimer = 0.0f;
-                StartCoroutine(eyeClose());
+                eyeClose();
             }
         }
     }
 
     public void eyeStare()
     {
-        eyeObject.SetActive(true);
-        eyeObject.GetComponent<Animator>().SetBool("isStaring", true);
-        eyeObject.GetComponent<Animator>().Play("EyeOpen");
+        StartCoroutine(domainExpansion.Timestop(50, 10));
         isStaring = true;
+        domainIsOn = true;
+        textToSpeechAI.LLM_Interaction = chatbotAI;
+        speechToTextAI.LLM_Interaction = chatbotAI;
     }
 
-    public IEnumerator eyeClose()
+    public void eyeClose()
     {
-        yield return new WaitForSeconds(2f);
-        eyeObject.SetActive(false);
+        StartCoroutine(domainExpansion.Timestop(0, 5));
     }
 }

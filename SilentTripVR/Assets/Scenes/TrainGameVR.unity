@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6c87a428fd5d0be9bbc686bdc8c3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  advancedOptions: 0
+  advancedOptions: 1
   remote: 0
   _llm: {fileID: 1486762030}
   APIKey: 
@@ -306,16 +306,34 @@ MonoBehaviour:
   stop: []
   stream: 1
   playerName: user
-  AIName: assistant
-  prompt: You are a human who were sitting close to the player on the train. You
-    answer exactly like how human answers to stranger question. You dont need to
-    explain anything unless they ask you to. Just like a quick chat. When someone
-    ask what are you, just answer like a human do. Do not describe your actions,
-    expressions, or emotions (e.g., sighs or looks out the window). Your replies
-    should be concise, realistic, and conversational. Answer questions naturally,
-    only elaborating when asked directly. If someone asks what you are, answer as
-    a human would without overexplaining. You should picture yourself as a grown
-    woman, not an AI nor a machine.
+  AIName: Emily
+  prompt: 'Your biodata:
+
+
+    Name: Emily Ranger
+
+    Age: 42
+
+    Gender: Female
+
+    Married:
+    Yes
+
+    Husband: Ryan Ranger, Age 12, Elementary School
+
+    Son: Emiliano Ranger,
+    Age 8, Elementary School
+
+    Daughter: Emma Ranger
+
+    Grandparents: Secret
+
+
+
+    You
+    are a soft, lovely, mother, who takes a train for work as a secretary at Bawang
+    Studio. You will express how much you love them when they ask about your family.
+    You always show so much gratitude on your work.'
   setNKeepToPrompt: 1
   chat: []
   grammarString: 
@@ -327,12 +345,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58500809}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1024.2354, y: 495.014, z: -3.4752133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1035.0691, y: 492.53247, z: -8.149673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 871918125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &123633586
 GameObject:
@@ -2354,54 +2372,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90.583984, y: 0, z: 0}
---- !u!1 &610242628
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 610242630}
-  - component: {fileID: 610242629}
-  m_Layer: 0
-  m_Name: SimpleInteraction
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &610242629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610242628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9898ca92690864a28e9d37d7ba07036, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  llmCharacter: {fileID: 58500810}
-  playerText: {fileID: 227515338}
-  AIText: {fileID: 1348463549}
-  TTS_AI: {fileID: 1911544867}
---- !u!4 &610242630
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 610242628}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615320987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,7 +3373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &746334080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3532,7 +3502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63cc99dbadf5bc4da10a1b8183cfc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LLM_Interaction: {fileID: 610242629}
+  LLM_Interaction: {fileID: 0}
+  LLM_Task: {fileID: 0}
 --- !u!4 &806165322
 Transform:
   m_ObjectHideFlags: 0
@@ -3679,6 +3650,10 @@ GameObject:
   - component: {fileID: 871918129}
   - component: {fileID: 871918127}
   - component: {fileID: 871918126}
+  - component: {fileID: 871918130}
+  - component: {fileID: 871918131}
+  - component: {fileID: 871918132}
+  - component: {fileID: 871918133}
   m_Layer: 0
   m_Name: NPC_Duduk-1_0
   m_TagString: Untagged
@@ -3701,6 +3676,7 @@ Transform:
   m_Children:
   - {fileID: 336709847}
   - {fileID: 32369275}
+  - {fileID: 58500811}
   m_Father: {fileID: 448150875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &871918126
@@ -3788,6 +3764,61 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &871918130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871918124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cdace044e7fa634fbbdfcb7c02cd099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0
+--- !u!114 &871918131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871918124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d374117c4d0da734eadcaedb9d708d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stareDurationThreshold: 3
+  isStaring: 0
+--- !u!114 &871918132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871918124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec5b3b0ffa55df444925f9cf63735643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &871918133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871918124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9898ca92690864a28e9d37d7ba07036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  llmCharacter: {fileID: 58500810}
+  playerText: {fileID: 227515338}
+  AIText: {fileID: 1348463549}
+  TTS_AI: {fileID: 1911544867}
 --- !u!1 &895996143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,6 +5313,108 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1347495590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347495592}
+  - component: {fileID: 1347495591}
+  - component: {fileID: 1347495593}
+  m_Layer: 0
+  m_Name: LLMTask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1347495591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347495590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6c87a428fd5d0be9bbc686bdc8c3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  advancedOptions: 1
+  remote: 0
+  _llm: {fileID: 1486762030}
+  APIKey: 
+  host: localhost
+  port: 13333
+  numRetries: 10
+  save: 
+  saveCache: 0
+  debugPrompt: 0
+  numPredict: 256
+  slot: -1
+  grammar: 
+  cachePrompt: 1
+  seed: 0
+  temperature: 0.2
+  topK: 40
+  topP: 0.9
+  minP: 0.05
+  repeatPenalty: 1.1
+  presencePenalty: 0
+  frequencyPenalty: 0
+  tfsZ: 1
+  typicalP: 1
+  repeatLastN: 64
+  penalizeNl: 1
+  penaltyPrompt: 
+  mirostat: 0
+  mirostatTau: 5
+  mirostatEta: 0.1
+  nProbs: 0
+  ignoreEos: 0
+  nKeep: -1
+  stop: []
+  stream: 1
+  playerName: user
+  AIName: assistant
+  prompt: You can only answer 0 - 2. You will answer 1 if and only if the user input
+    is a greeting (Hi, Hello, What's up). You will answer 2 if and only if the user
+    input is a question about personal stuff. Everything else will be answered 0.
+  setNKeepToPrompt: 1
+  chat: []
+  grammarString: 
+--- !u!4 &1347495592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347495590}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1024.2354, y: 495.014, z: -3.4752197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1347495593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347495590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ecd5604382e96438582f73c4d56cf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  llmCharacter: {fileID: 1347495591}
+  playerText: {fileID: 227515338}
 --- !u!1 &1348463547
 GameObject:
   m_ObjectHideFlags: 0
@@ -6461,7 +6594,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 610242629}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SimpleInteraction, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -6632,143 +6765,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1653547530
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1653547534}
-  - component: {fileID: 1653547533}
-  - component: {fileID: 1653547532}
-  - component: {fileID: 1653547531}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1653547531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653547530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 1
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_AllowHDROutput: 1
-  m_UseScreenCoordOverride: 0
-  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
-  m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
---- !u!81 &1653547532
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653547530}
-  m_Enabled: 1
---- !u!20 &1653547533
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653547530}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_Iso: 200
-  m_ShutterSpeed: 0.005
-  m_Aperture: 16
-  m_FocusDistance: 10
-  m_FocalLength: 50
-  m_BladeCount: 5
-  m_Curvature: {x: 2, y: 11}
-  m_BarrelClipping: 0.25
-  m_Anamorphism: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1653547534
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1653547530}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.05950426, y: -0.7178653, z: 0.04817032, w: 0.6919598}
-  m_LocalPosition: {x: -4.94, y: 2.76, z: 1.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 8.714, y: -92.188, z: -1.088}
 --- !u!1 &1732863523
 GameObject:
   m_ObjectHideFlags: 0
@@ -7873,7 +7869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ade2be6d621af4eb4d215f87cb07db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LLM_Interaction: {fileID: 610242629}
+  LLM_Interaction: {fileID: 0}
 --- !u!4 &1911544868
 Transform:
   m_ObjectHideFlags: 0
@@ -8317,7 +8313,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 610242629}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SimpleInteraction, Assembly-CSharp
         m_MethodName: CancelRequests
         m_Mode: 1
@@ -9181,9 +9177,8 @@ SceneRoots:
   - {fileID: 806165322}
   - {fileID: 1911544868}
   - {fileID: 1486762031}
-  - {fileID: 58500811}
+  - {fileID: 1347495592}
   - {fileID: 1918649072}
-  - {fileID: 610242630}
   - {fileID: 448150875}
   - {fileID: 142155606}
   - {fileID: 615320990}
@@ -9200,4 +9195,3 @@ SceneRoots:
   - {fileID: 1380880683}
   - {fileID: 1492393672}
   - {fileID: 746334084}
-  - {fileID: 1653547534}
