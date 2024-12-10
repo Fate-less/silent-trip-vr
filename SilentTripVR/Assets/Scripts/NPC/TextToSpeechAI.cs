@@ -8,17 +8,14 @@ using LLMUnitySamples;
 
 public class TextToSpeechAI : MonoBehaviour
 {
-    // Azure Speech Service API Key and Region
-    private string speechKey = "9R9jmHFbcjc5izuChKI0lEgQ6Br3GBVhaZP6VJNSdCUa5XwnQwCwJQQJ99AKACqBBLyXJ3w3AAAYACOGCJNw"; // Replace with your Azure API Key
-    private string serviceRegion = "southeastasia"; // Replace with your Azure Region (e.g., "eastus")
+    private string speechKey = "9R9jmHFbcjc5izuChKI0lEgQ6Br3GBVhaZP6VJNSdCUa5XwnQwCwJQQJ99AKACqBBLyXJ3w3AAAYACOGCJNw";
+    private string serviceRegion = "southeastasia";
 
-    // Speech synthesizer
     private SpeechSynthesizer synthesizer;
     public SimpleInteraction LLM_Interaction;
 
     private void Start()
     {
-        // Initialize the Speech Synthesizer
         var config = SpeechConfig.FromSubscription(speechKey, serviceRegion);
         synthesizer = new SpeechSynthesizer(config);
     }

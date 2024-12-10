@@ -5380,9 +5380,17 @@ MonoBehaviour:
   stream: 1
   playerName: user
   AIName: assistant
-  prompt: You can only answer 0 - 2. You will answer 1 if and only if the user input
-    is a greeting (Hi, Hello, What's up). You will answer 2 if and only if the user
-    input is a question about personal stuff. Everything else will be answered 0.
+  prompt: "You can only answer 0 - 9. \n\nYou will answer 1 if and only if the user
+    input is a greeting (Hi, Hello, What's up). You will answer 2 if and only if
+    the user input is asking about weather. You will answer 3 if and only if the
+    user input is asking opinion about the train. You will answer 4 if and only if
+    the user input is asking opinion about the train. You will answer 5 if and only
+    if the user input is asking opinion about how often you take this train. You
+    will answer 6 if and only if the user is commenting on the atmosphere inside
+    the train. You will answer 7 if and only if the user is asking your name. You
+    will answer 8 if and only if the user is asking about the purpose of your trip.
+    You will answer 9 if and only if the user is complimenting you. Everything else
+    will be answered 0."
   setNKeepToPrompt: 1
   chat: []
   grammarString: 
