@@ -14,11 +14,13 @@ public class StareDetection : MonoBehaviour
     private bool domainIsOn = false;
     private SpeechToTextAI speechToTextAI;
     private TextToSpeechAI textToSpeechAI;
+    private TaskHandler taskHandler;
 
     private float stareTimer = 0.0f;
 
     private void Start()
     {
+        taskHandler = GetComponent<TaskHandler>();
         domainExpansion = GetComponent<DomainExpansion>();
         playerCamera = GameObject.Find("Main Camera");
         chatbotAI = GetComponent<SimpleInteraction>();
@@ -55,12 +57,15 @@ public class StareDetection : MonoBehaviour
         StartCoroutine(domainExpansion.Timestop(50, 10));
         isStaring = true;
         domainIsOn = true;
+        taskHandler.stareDetection = this;
         textToSpeechAI.LLM_Interaction = chatbotAI;
         speechToTextAI.LLM_Interaction = chatbotAI;
+        StartCoroutine(speechToTextAI.StartRecognitionCoroutine());
     }
 
     public void eyeClose()
     {
         StartCoroutine(domainExpansion.Timestop(0, 5));
+        StartCoroutine(speechToTextAI.StopRecognitionCoroutine());
     }
 }

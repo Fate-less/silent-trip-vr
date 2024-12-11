@@ -79,7 +79,7 @@ public class SpeechToTextAI : MonoBehaviour
         }
     }
 
-    private IEnumerator StartRecognitionCoroutine()
+    public IEnumerator StartRecognitionCoroutine()
 {
     var task = StartRecognitionAsync();
     while (!task.IsCompleted)
@@ -92,18 +92,18 @@ public class SpeechToTextAI : MonoBehaviour
     }
 }
 
-private IEnumerator StopRecognitionCoroutine()
-{
-    var task = StopRecognitionAsync();
-    while (!task.IsCompleted)
+    public IEnumerator StopRecognitionCoroutine()
     {
-        yield return null;
+        var task = StopRecognitionAsync();
+        while (!task.IsCompleted)
+        {
+            yield return null;
+        }
+        if (task.Exception != null)
+        {
+            Debug.LogError("Error stopping recognition: " + task.Exception);
+        }
     }
-    if (task.Exception != null)
-    {
-        Debug.LogError("Error stopping recognition: " + task.Exception);
-    }
-}
 
 
     private async Task StartRecognitionAsync()

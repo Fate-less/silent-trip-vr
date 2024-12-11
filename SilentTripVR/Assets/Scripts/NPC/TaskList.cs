@@ -8,24 +8,7 @@ public class TaskList : MonoBehaviour
     public List<string> Task;
     public TextMeshPro[] taskTMP;
     public int currentTaskSet;
-    public int taskSeed;
-
-    public void RandomSeed()
-    {
-        int randomValue = Random.Range(1, 3);
-        if (randomValue == 1) { taskSeed = 123; }
-        else if (randomValue == 2) { taskSeed = 321; }
-        else { taskSeed = 231; }
-    }
-
-    public void GenerateSeed()
-    {
-        RandomSeed();
-        if(taskSeed == 123)
-        {
-            
-        }
-    }
+    public SpriteRenderer[] spriteRenderer;
 
     public void DisplayTask()
     {

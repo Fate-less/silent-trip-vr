@@ -10,10 +10,12 @@ namespace LLMUnitySamples
     {
         public LLMCharacter llmCharacter;
         public InputField playerText;
+        private TaskHandler taskHandler;
         private string AIText;
 
         void Start()
         {
+            taskHandler = GameObject.Find("TaskHandler").GetComponent<TaskHandler>();
             playerText.onSubmit.AddListener(onInputFieldSubmit);
             playerText.Select();
         }
@@ -32,6 +34,7 @@ namespace LLMUnitySamples
         public void AIReplyComplete()
         {
             Debug.Log(AIText);
+            taskHandler.CheckAnswer(AIText, taskHandler.stareDetection.gameObject.GetComponent<TaskList>());
             playerText.interactable = true;
             playerText.Select();
             playerText.text = "";
