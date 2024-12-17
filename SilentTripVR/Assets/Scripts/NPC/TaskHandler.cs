@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using LLMUnitySamples;
+using UnityEngine.UI;
+using TMPro;
 
 public class TaskHandler : MonoBehaviour
 {
     private TaskGenerator taskGenerator;
     public Sprite taskCompletedSprite;
     public StareDetection stareDetection;
+    public TextMeshProUGUI[] taskTMP;
+    public Image[] checklist;
 
     private void Start()
     {
@@ -21,17 +25,20 @@ public class TaskHandler : MonoBehaviour
             if(answer == "1")
             {
                 taskList.Task.RemoveAt(0);
-                taskList.spriteRenderer[0].sprite = taskCompletedSprite;
+                checklist[0].sprite = taskCompletedSprite;
             }
             else if(answer == "2")
             {
-                taskList.Task.RemoveAt(1);
-                taskList.spriteRenderer[1].sprite = taskCompletedSprite;
+                int num;
+                if(taskList.Task.Count < 2) { num = 0; }
+                else { num = taskList.Task.Count - 2; }
+                taskList.Task.RemoveAt(num);
+                checklist[1].sprite = taskCompletedSprite;
             }
             else if(answer == "3")
             {
-                taskList.Task.RemoveAt(2);
-                taskList.spriteRenderer[2].sprite = taskCompletedSprite;
+                taskList.Task.RemoveAt(taskList.Task.Count - 1);
+                checklist[2].sprite = taskCompletedSprite;
             }
         }
         else if(taskList.currentTaskSet == 2)
@@ -39,17 +46,20 @@ public class TaskHandler : MonoBehaviour
             if (answer == "4")
             {
                 taskList.Task.RemoveAt(0);
-                taskList.spriteRenderer[0].sprite = taskCompletedSprite;
+                checklist[0].sprite = taskCompletedSprite;
             }
             else if (answer == "5")
             {
-                taskList.Task.RemoveAt(1);
-                taskList.spriteRenderer[1].sprite = taskCompletedSprite;
+                int num;
+                if (taskList.Task.Count < 2) { num = 0; }
+                else { num = taskList.Task.Count - 2; }
+                taskList.Task.RemoveAt(num);
+                checklist[1].sprite = taskCompletedSprite;
             }
             else if (answer == "6")
             {
-                taskList.Task.RemoveAt(2);
-                taskList.spriteRenderer[2].sprite = taskCompletedSprite;
+                taskList.Task.RemoveAt(taskList.Task.Count - 1);
+                checklist[2].sprite = taskCompletedSprite;
             }
         }
         else if (taskList.currentTaskSet == 3)
@@ -57,18 +67,25 @@ public class TaskHandler : MonoBehaviour
             if (answer == "7")
             {
                 taskList.Task.RemoveAt(0);
-                taskList.spriteRenderer[0].sprite = taskCompletedSprite;
+                checklist[0].sprite = taskCompletedSprite;
             }
             else if (answer == "8")
             {
-                taskList.Task.RemoveAt(1);
-                taskList.spriteRenderer[1].sprite = taskCompletedSprite;
+                int num;
+                if (taskList.Task.Count < 2) { num = 0; }
+                else { num = taskList.Task.Count - 2; }
+                taskList.Task.RemoveAt(num);
+                checklist[1].sprite = taskCompletedSprite;
             }
             else if (answer == "9")
             {
-                taskList.Task.RemoveAt(2);
-                taskList.spriteRenderer[2].sprite = taskCompletedSprite;
+                taskList.Task.RemoveAt(taskList.Task.Count - 1);
+                checklist[2].sprite = taskCompletedSprite;
             }
+        }
+        if (taskList.Task.Count == 0)
+        {
+            stareDetection.allTaskDone = true;
         }
     }
 }

@@ -8,6 +8,7 @@ public class StareDetection : MonoBehaviour
 {
     public float stareDurationThreshold = 3.0f;
     public bool isStaring = false;
+    [HideInInspector] public bool allTaskDone = false;
     private SimpleInteraction chatbotAI;
     private DomainExpansion domainExpansion;
     private GameObject playerCamera;
@@ -15,17 +16,21 @@ public class StareDetection : MonoBehaviour
     private SpeechToTextAI speechToTextAI;
     private TextToSpeechAI textToSpeechAI;
     private TaskHandler taskHandler;
+    private GameObject taskUI;
+    private TaskList taskList;
 
     private float stareTimer = 0.0f;
 
     private void Start()
     {
-        taskHandler = GetComponent<TaskHandler>();
+        taskHandler = GameObject.Find("TaskHandler").GetComponent<TaskHandler>();
         domainExpansion = GetComponent<DomainExpansion>();
         playerCamera = GameObject.Find("Main Camera");
         chatbotAI = GetComponent<SimpleInteraction>();
         speechToTextAI = GameObject.Find("SpeechManager").GetComponent<SpeechToTextAI>();
         textToSpeechAI = GameObject.Find("TTSManager").GetComponent<TextToSpeechAI>();
+        taskUI = GameObject.Find("TaskUI");
+        taskList = GetComponent<TaskList>();
     }
 
     void Update()
@@ -35,7 +40,7 @@ public class StareDetection : MonoBehaviour
         if (angle < 45f)
         {
             stareTimer += Time.deltaTime;
-            if (stareTimer >= stareDurationThreshold && !isStaring)
+            if (stareTimer >= stareDurationThreshold && !isStaring && !allTaskDone)
             {
                 eyeStare();
             }
@@ -50,6 +55,13 @@ public class StareDetection : MonoBehaviour
                 eyeClose();
             }
         }
+        if(allTaskDone && domainIsOn)
+        {
+            isStaring = false;
+            domainIsOn = false;
+            stareTimer = 0.0f;
+            eyeClose();
+        }
     }
 
     public void eyeStare()
@@ -60,12 +72,16 @@ public class StareDetection : MonoBehaviour
         taskHandler.stareDetection = this;
         textToSpeechAI.LLM_Interaction = chatbotAI;
         speechToTextAI.LLM_Interaction = chatbotAI;
-        StartCoroutine(speechToTextAI.StartRecognitionCoroutine());
+        speechToTextAI.InitializeRecognizer();
+        taskList.DisplayTask();
     }
 
     public void eyeClose()
     {
         StartCoroutine(domainExpansion.Timestop(0, 5));
-        StartCoroutine(speechToTextAI.StopRecognitionCoroutine());
+        if (speechToTextAI.isRecognizerInitialized && speechToTextAI.isRecognitionActive)
+        {
+            speechToTextAI.recognizer.StopContinuousRecognitionAsync().Wait();
+        }
     }
 }

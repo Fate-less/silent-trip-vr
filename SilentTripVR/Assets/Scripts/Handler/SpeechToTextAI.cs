@@ -7,7 +7,7 @@ using LLMUnitySamples;
 
 public class SpeechToTextAI : MonoBehaviour
 {
-    private SpeechRecognizer recognizer;
+    [HideInInspector] public SpeechRecognizer recognizer;
     public SimpleInteraction LLM_Interaction;
     public TaskCompleteDetection LLM_Task;
 
@@ -15,8 +15,8 @@ public class SpeechToTextAI : MonoBehaviour
     private string speechKey = "9R9jmHFbcjc5izuChKI0lEgQ6Br3GBVhaZP6VJNSdCUa5XwnQwCwJQQJ99AKACqBBLyXJ3w3AAAYACOGCJNw";
     private string serviceRegion = "southeastasia";
 
-    private bool isRecognizerInitialized = false;
-    private bool isRecognitionActive = false;
+    [HideInInspector] public bool isRecognizerInitialized = false;
+    [HideInInspector] public bool isRecognitionActive = false;
 
     private bool speechRecognized = false;
     private string speechText;
@@ -24,10 +24,9 @@ public class SpeechToTextAI : MonoBehaviour
     void Start()
     {
         LLM_Task = GameObject.Find("LLMTask").GetComponent<TaskCompleteDetection>();
-        InitializeRecognizer();
     }
 
-    private void InitializeRecognizer()
+    public async void InitializeRecognizer()
     {
         var config = SpeechConfig.FromSubscription(speechKey, serviceRegion);
         recognizer = new SpeechRecognizer(config);
@@ -57,21 +56,23 @@ public class SpeechToTextAI : MonoBehaviour
 
         isRecognizerInitialized = true;
         Debug.Log("Speech recognizer initialized.");
+
+        await StartRecognitionAsync();
     }
 
     void Update()
     {
-        // Start recognition when the button is held down
-        if (Input.GetButtonDown("Fire1") && isRecognizerInitialized && !isRecognitionActive)
-        {
-            StartCoroutine(StartRecognitionCoroutine());
-        }
+        //// Start recognition when the button is held down
+        //if (Input.GetButtonDown("Fire1") && isRecognizerInitialized && !isRecognitionActive)
+        //{
+        //    StartCoroutine(StartRecognitionCoroutine());
+        //}
 
-        // Stop recognition when the button is released
-        if (Input.GetButtonUp("Fire1") && isRecognizerInitialized && isRecognitionActive)
-        {
-            StartCoroutine(StopRecognitionCoroutine());
-        }
+        //// Stop recognition when the button is released
+        //if (Input.GetButtonUp("Fire1") && isRecognizerInitialized && isRecognitionActive)
+        //{
+        //    StartCoroutine(StopRecognitionCoroutine());
+        //}
         if (speechRecognized)
         {
             OnSpeechRecognized(speechText);

@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class TaskList : MonoBehaviour
 {
     public List<string> Task;
-    public TextMeshPro[] taskTMP;
-    public int currentTaskSet;
-    public SpriteRenderer[] spriteRenderer;
+    [HideInInspector] public int currentTaskSet;
+    private TaskHandler taskHandler;
 
+    private void Start()
+    {
+        taskHandler = GameObject.Find("TaskHandler").GetComponent<TaskHandler>();
+    }
     public void DisplayTask()
     {
-        for(int i = 0;i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            taskTMP[i].text = Task[i];
+            taskHandler.taskTMP[i].text = Task[i];
         }
     }
-
     public void TaskSetOne()
     {
         currentTaskSet = 1;

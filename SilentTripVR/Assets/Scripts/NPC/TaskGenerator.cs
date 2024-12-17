@@ -6,6 +6,12 @@ public class TaskGenerator : MonoBehaviour
 {
     public int taskSeed;
     public TaskList[] taskList;
+
+    private void Start()
+    {
+        GenerateSeed();
+    }
+
     public void RandomSeed()
     {
         int randomValue = Random.Range(1, 3);
@@ -34,10 +40,6 @@ public class TaskGenerator : MonoBehaviour
             taskList[0].TaskSetTwo();
             taskList[1].TaskSetThree();
             taskList[2].TaskSetOne();
-        }
-        for (int i = 0; i < taskList.Length; i++)
-        {
-            taskList[i].DisplayTask();
         }
     }
 }
