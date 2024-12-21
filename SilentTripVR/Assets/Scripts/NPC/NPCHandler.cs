@@ -21,11 +21,17 @@ public class NPCHandler : MonoBehaviour
 
     private void npcSecondCycleFadeIn(float endValue, float duration)
     {
-        npcSecondCycle[i].GetComponent<FadeInNPC>().SpriteFade(npcSecondCycle[i].GetComponent<SpriteRenderer>(), endValue, duration);
+        for (int i = 0; i < npcSecondCycle.Count; i++)
+        {
+            npcSecondCycle[i].GetComponent<FadeInNPC>().SpriteFade(npcSecondCycle[i].GetComponent<SpriteRenderer>(), endValue, duration);
+        }
     }
     private void npcThirdCycleFadeIn(float endValue, float duration)
     {
-        npcThirdCycle[i].GetComponent<FadeInNPC>().SpriteFade(npcThirdCycle[i].GetComponent<SpriteRenderer>(), endValue, duration);
+        for (int i = 0; i < npcThirdCycle.Count; i++)
+        {
+            npcThirdCycle[i].GetComponent<FadeInNPC>().SpriteFade(npcThirdCycle[i].GetComponent<SpriteRenderer>(), endValue, duration);
+        }
     }
     public void SetActiveNPCSecondCycle(bool isActive)
     {

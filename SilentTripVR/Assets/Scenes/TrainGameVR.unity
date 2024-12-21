@@ -1018,13 +1018,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228442849}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9999999, z: -0, w: 0.00058546657}
-  m_LocalPosition: {x: 0.224, y: 0.789, z: 0.065}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.224, y: 0.789, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1805938959}
-  m_LocalEulerAnglesHint: {x: 0, y: -180.067, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &228442851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de5998b55b191df4093d83a12c250ae4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 230533337}
   - component: {fileID: 230533339}
   m_Layer: 0
-  m_Name: NPC_BG (3)
+  m_Name: NPC_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1987,7 +1987,7 @@ GameObject:
   - component: {fileID: 403213966}
   - component: {fileID: 403213965}
   m_Layer: 0
-  m_Name: NPC_Pegangan_Tinggi-2_0 (1)
+  m_Name: NPC_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2104,6 +2104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448150875}
+  - component: {fileID: 448150876}
   m_Layer: 0
   m_Name: Passengers
   m_TagString: Untagged
@@ -2126,23 +2127,55 @@ Transform:
   m_Children:
   - {fileID: 871918125}
   - {fileID: 1627749603}
-  - {fileID: 515578307}
-  - {fileID: 2054067517}
-  - {fileID: 620021352}
-  - {fileID: 2107082905}
-  - {fileID: 230533336}
-  - {fileID: 729762290}
-  - {fileID: 645402432}
-  - {fileID: 1150038131}
   - {fileID: 1029102616}
-  - {fileID: 1512629705}
-  - {fileID: 643767971}
-  - {fileID: 1905585622}
-  - {fileID: 403213964}
   - {fileID: 2034452270}
+  - {fileID: 1512629705}
+  - {fileID: 515578307}
+  - {fileID: 1150038131}
+  - {fileID: 620021352}
+  - {fileID: 729762290}
   - {fileID: 1805938959}
+  - {fileID: 403213964}
+  - {fileID: 1905585622}
+  - {fileID: 2054067517}
+  - {fileID: 230533336}
+  - {fileID: 643767971}
+  - {fileID: 645402432}
+  - {fileID: 2107082905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448150876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448150874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143f10942351921419bfd4bc5770723e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcFirstCycle:
+  - {fileID: 871918124}
+  - {fileID: 515578306}
+  - {fileID: 1150038130}
+  - {fileID: 620021351}
+  - {fileID: 729762289}
+  npcSecondCycle:
+  - {fileID: 1029102615}
+  - {fileID: 2054067516}
+  - {fileID: 230533335}
+  - {fileID: 643767970}
+  - {fileID: 645402431}
+  - {fileID: 2107082904}
+  npcThirdCycle:
+  - {fileID: 1627749602}
+  - {fileID: 2034452269}
+  - {fileID: 1512629704}
+  - {fileID: 1805938958}
+  - {fileID: 403213963}
+  - {fileID: 1905585621}
 --- !u!1 &463705087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2265,7 @@ GameObject:
   - component: {fileID: 515578309}
   - component: {fileID: 515578308}
   m_Layer: 0
-  m_Name: NPC_Duduk-3_0
+  m_Name: NPC_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2246,15 +2279,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515578306}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.91137224, z: -0, w: 0.41158304}
-  m_LocalPosition: {x: 25.59, y: 43.96, z: -161.94}
+  m_LocalRotation: {x: -0, y: -0.87759686, z: -0, w: 0.47939938}
+  m_LocalPosition: {x: 25.472, y: 44.138, z: -161.799}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1171267707}
   - {fileID: 1192558850}
   m_Father: {fileID: 448150875}
-  m_LocalEulerAnglesHint: {x: 0, y: -131.391, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -122.708, z: 0}
 --- !u!114 &515578308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2664,7 +2697,7 @@ GameObject:
   - component: {fileID: 620021353}
   - component: {fileID: 620021355}
   m_Layer: 0
-  m_Name: NPC_BG (1)
+  m_Name: NPC_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2679,7 +2712,7 @@ Transform:
   m_GameObject: {fileID: 620021351}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.8150447, z: -0, w: 0.57939816}
-  m_LocalPosition: {x: 28.32, y: 43.88, z: -162.13}
+  m_LocalPosition: {x: 28.28, y: 43.77, z: -162.03}
   m_LocalScale: {x: 0.8772, y: 0.8772, z: 0.8772}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2784,7 +2817,7 @@ GameObject:
   - component: {fileID: 643767972}
   - component: {fileID: 643767974}
   m_Layer: 0
-  m_Name: NPC_Pegangan_Tinggi-1_0 (1)
+  m_Name: NPC_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2799,8 +2832,8 @@ Transform:
   m_GameObject: {fileID: 643767970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.6898863, z: -0, w: -0.72391784}
-  m_LocalPosition: {x: 39.46, y: 43.3637, z: -166.02}
-  m_LocalScale: {x: 0.9409938, y: 0.9409938, z: 0.9409938}
+  m_LocalPosition: {x: 33.49, y: 43.51, z: -163.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2063575969}
@@ -2904,7 +2937,7 @@ GameObject:
   - component: {fileID: 645402433}
   - component: {fileID: 645402435}
   m_Layer: 0
-  m_Name: NPC_BG (2)
+  m_Name: NPC_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3354,7 +3387,7 @@ GameObject:
   - component: {fileID: 729762291}
   - component: {fileID: 729762293}
   m_Layer: 0
-  m_Name: NPC_BG (4)
+  m_Name: NPC_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4029,13 +4062,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833058058}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9999999, z: -0, w: 0.00058546657}
-  m_LocalPosition: {x: 0.23, y: 0.789, z: -0.055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.23, y: 0.956, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 403213964}
-  m_LocalEulerAnglesHint: {x: 0, y: -180.067, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &833058060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4111,7 +4144,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de5998b55b191df4093d83a12c250ae4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4139,7 +4172,7 @@ GameObject:
   - component: {fileID: 871918133}
   - component: {fileID: 871918134}
   m_Layer: 0
-  m_Name: NPC_Duduk-1_0
+  m_Name: NPC_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4875,7 +4908,7 @@ Transform:
   m_GameObject: {fileID: 1015132106}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.99995095, z: 0, w: -0.009904505}
-  m_LocalPosition: {x: 0.132, y: 0.313, z: -0.077}
+  m_LocalPosition: {x: 0.131, y: 0.313, z: -0.142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4956,7 +4989,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de5998b55b191df4093d83a12c250ae4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4983,7 +5016,7 @@ GameObject:
   - component: {fileID: 1029102622}
   - component: {fileID: 1029102621}
   m_Layer: 0
-  m_Name: NPC_Duduk-3_0 (1)
+  m_Name: NPC_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4997,15 +5030,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029102615}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.70879555, z: 0, w: 0.705414}
-  m_LocalPosition: {x: 17.92, y: 43.979, z: -166.864}
+  m_LocalRotation: {x: -0, y: 0.69787526, z: -0, w: 0.71621937}
+  m_LocalPosition: {x: 17.1, y: 44.15, z: -166.772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 707178357}
   - {fileID: 1015132107}
   m_Father: {fileID: 448150875}
-  m_LocalEulerAnglesHint: {x: 0, y: 90.274, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.514, z: 0}
 --- !u!114 &1029102617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5220,13 +5253,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148138797}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.95371085, z: -0, w: 0.30072528}
-  m_LocalPosition: {x: 0.066, y: 0.349, z: 0.189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.066, y: 0.349, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 620021352}
-  m_LocalEulerAnglesHint: {x: 0, y: 144.998, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1148138799
 Animator:
   serializedVersion: 5
@@ -5313,7 +5346,7 @@ GameObject:
   - component: {fileID: 1150038133}
   - component: {fileID: 1150038132}
   m_Layer: 0
-  m_Name: NPC_Duduk-3_0 (2)
+  m_Name: NPC_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5554,13 +5587,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192558849}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9270408, z: -0, w: 0.3749605}
-  m_LocalPosition: {x: -0.211, y: 0.21900073, z: 0.459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.18, y: 0.21900073, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 515578307}
-  m_LocalEulerAnglesHint: {x: 0, y: 135.956, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1192558851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6719,7 +6752,7 @@ GameObject:
   - component: {fileID: 1512629707}
   - component: {fileID: 1512629706}
   m_Layer: 0
-  m_Name: NPC_Pegangan_Tinggi-1_0
+  m_Name: NPC_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6734,7 +6767,7 @@ Transform:
   m_GameObject: {fileID: 1512629704}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.6898863, z: -0, w: -0.72391784}
-  m_LocalPosition: {x: 23.942, y: 43.51, z: -165.847}
+  m_LocalPosition: {x: 23.942, y: 43.77, z: -165.847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7200,7 +7233,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de5998b55b191df4093d83a12c250ae4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7435,7 +7468,7 @@ GameObject:
   - component: {fileID: 1627749609}
   - component: {fileID: 1627749608}
   m_Layer: 0
-  m_Name: NPC_Duduk-2_0
+  m_Name: NPC_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7856,13 +7889,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786799109}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9270408, z: -0, w: 0.3749605}
-  m_LocalPosition: {x: -0.211, y: 0.21900073, z: 0.459}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.294, y: 0.309, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1150038131}
-  m_LocalEulerAnglesHint: {x: 0, y: 135.956, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1786799111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7938,7 +7971,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de5998b55b191df4093d83a12c250ae4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7961,7 +7994,7 @@ GameObject:
   - component: {fileID: 1805938961}
   - component: {fileID: 1805938960}
   m_Layer: 0
-  m_Name: NPC_Pegangan_Tinggi-3_0
+  m_Name: NPC_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7975,15 +8008,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805938958}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.76492614, z: -0, w: -0.6441181}
-  m_LocalPosition: {x: 31.083, y: 43.51, z: -165.243}
+  m_LocalRotation: {x: -0, y: 0.7681238, z: -0, w: -0.64030135}
+  m_LocalPosition: {x: 30.278, y: 43.76, z: -162.676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 123633587}
   - {fileID: 228442850}
   m_Father: {fileID: 448150875}
-  m_LocalEulerAnglesHint: {x: 0, y: 260.199, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 259.629, z: 0}
 --- !u!114 &1805938960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8400,7 +8433,7 @@ Transform:
   m_GameObject: {fileID: 1862096694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9999999, z: -0, w: 0.00058546657}
-  m_LocalPosition: {x: 0.224, y: 0.789, z: 0.065}
+  m_LocalPosition: {x: 0.224, y: 0.91, z: 0.133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8481,7 +8514,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: de5998b55b191df4093d83a12c250ae4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8659,7 +8692,7 @@ GameObject:
   - component: {fileID: 1905585623}
   - component: {fileID: 1905585625}
   m_Layer: 0
-  m_Name: NPC_Pegangan_Tinggi-1_0 (2)
+  m_Name: NPC_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9065,7 +9098,7 @@ Transform:
   m_GameObject: {fileID: 1978605363}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9999999, z: -0, w: 0.00058546657}
-  m_LocalPosition: {x: 0.23, y: 0.789, z: -0.055}
+  m_LocalPosition: {x: 0.269, y: 0.88, z: -0.097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9460,7 +9493,7 @@ GameObject:
   - component: {fileID: 2034452272}
   - component: {fileID: 2034452271}
   m_Layer: 0
-  m_Name: NPC_Pegangan_Tinggi-2_0
+  m_Name: NPC_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9475,7 +9508,7 @@ Transform:
   m_GameObject: {fileID: 2034452269}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.76492614, z: -0, w: -0.6441181}
-  m_LocalPosition: {x: 23.84, y: 43.51, z: -163.14}
+  m_LocalPosition: {x: 24.087, y: 43.8, z: -162.732}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9581,7 +9614,7 @@ GameObject:
   - component: {fileID: 2054067518}
   - component: {fileID: 2054067520}
   m_Layer: 0
-  m_Name: NPC_BG
+  m_Name: NPC_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10013,7 +10046,7 @@ GameObject:
   - component: {fileID: 2107082906}
   - component: {fileID: 2107082908}
   m_Layer: 0
-  m_Name: NPC_BG (5)
+  m_Name: NPC_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
