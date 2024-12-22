@@ -10,6 +10,7 @@ public class TaskHandler : MonoBehaviour
     private TaskGenerator taskGenerator;
     public Sprite taskCompletedSprite;
     public StareDetection stareDetection;
+    public GameObject taskUI;
     public TextMeshProUGUI[] taskTMP;
     public Image[] checklist;
 

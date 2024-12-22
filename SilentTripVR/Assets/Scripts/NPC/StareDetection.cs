@@ -16,7 +16,6 @@ public class StareDetection : MonoBehaviour
     private SpeechToTextAI speechToTextAI;
     private TextToSpeechAI textToSpeechAI;
     private TaskHandler taskHandler;
-    private GameObject taskUI;
     private TaskList taskList;
 
     private float stareTimer = 0.0f;
@@ -29,7 +28,6 @@ public class StareDetection : MonoBehaviour
         chatbotAI = GetComponent<SimpleInteraction>();
         speechToTextAI = GameObject.Find("SpeechManager").GetComponent<SpeechToTextAI>();
         textToSpeechAI = GameObject.Find("TTSManager").GetComponent<TextToSpeechAI>();
-        taskUI = GameObject.Find("TaskUI");
         taskList = GetComponent<TaskList>();
     }
 
@@ -73,12 +71,14 @@ public class StareDetection : MonoBehaviour
         textToSpeechAI.LLM_Interaction = chatbotAI;
         speechToTextAI.LLM_Interaction = chatbotAI;
         speechToTextAI.InitializeRecognizer();
+        taskHandler.taskUI.SetActive(true);
         taskList.DisplayTask();
     }
 
     public void eyeClose()
     {
         StartCoroutine(domainExpansion.Timestop(0, 5));
+        taskHandler.taskUI.SetActive(false);
         if (speechToTextAI.isRecognizerInitialized && speechToTextAI.isRecognitionActive)
         {
             speechToTextAI.recognizer.StopContinuousRecognitionAsync().Wait();

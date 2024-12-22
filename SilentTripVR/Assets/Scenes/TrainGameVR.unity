@@ -1486,6 +1486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskCompletedSprite: {fileID: 21300000, guid: 7d72ceabf6b1d294b9e5a83d905916b2, type: 3}
   stareDetection: {fileID: 0}
+  taskUI: {fileID: 1676854264}
   taskTMP:
   - {fileID: 1365907672}
   - {fileID: 823830617}
