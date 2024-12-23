@@ -47,7 +47,7 @@ as a workaround for 2D Renderer not supporting features (prior to 2021.2). Uncom
 			private ScriptableRenderer renderer;
 #endif
 
-			public BlitPass(RenderPassEvent renderPassEvent, BlitSettings settings, string tag) {
+            public BlitPass(RenderPassEvent renderPassEvent, BlitSettings settings, string tag) {
 				this.renderPassEvent = renderPassEvent;
 				this.settings = settings;
 				blitMaterial = settings.blitMaterial;
@@ -67,7 +67,7 @@ as a workaround for 2D Renderer not supporting features (prior to 2021.2). Uncom
 #endif
 			}
 
-			public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData) {
+            public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData) {
 				CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
 				RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;
 				opaqueDesc.depthBufferBits = 0;

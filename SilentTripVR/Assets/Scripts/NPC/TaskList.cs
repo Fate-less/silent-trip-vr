@@ -14,7 +14,7 @@ public class TaskList : MonoBehaviour
     }
     public void DisplayTask()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < Task.Count; i++)
         {
             taskHandler.taskTMP[i].text = Task[i];
         }
@@ -38,9 +38,9 @@ public class TaskList : MonoBehaviour
     public void TaskSetThree()
     {
         currentTaskSet = 3;
-        Task.Add("Ask the person's name");
-        Task.Add("Ask the person about the purpose of their trip");
         Task.Add("Give the person a compliment");
+        Task.Add("Ask the person about the purpose of their trip");
+        Task.Add("Ask the person their daily activities");
     }
 
     public void RefreshTask()

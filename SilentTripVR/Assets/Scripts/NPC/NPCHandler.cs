@@ -7,6 +7,7 @@ public class NPCHandler : MonoBehaviour
     public List<GameObject> npcFirstCycle;
     public List<GameObject> npcSecondCycle;
     public List<GameObject> npcThirdCycle;
+    [HideInInspector] public int currentCycle = 1;
 
     private void Start()
     {
@@ -39,6 +40,8 @@ public class NPCHandler : MonoBehaviour
         {
             npcSecondCycle[i].SetActive(isActive);
         }
+        npcSecondCycleFadeIn(1, 1);
+        currentCycle = 2;
     }
     public void SetActiveNPCThirdCycle(bool isActive)
     {
@@ -46,5 +49,21 @@ public class NPCHandler : MonoBehaviour
         {
             npcThirdCycle[i].SetActive(isActive);
         }
+        npcThirdCycleFadeIn(1, 1);
+        currentCycle = 3;
+    }
+
+    public void NextCycle()
+    {
+        if(currentCycle == 1)
+        {
+            SetActiveNPCSecondCycle(true);
+        }
+        if(currentCycle == 2)
+        {
+            SetActiveNPCThirdCycle(true);
+        }
+        else { }
+
     }
 }
