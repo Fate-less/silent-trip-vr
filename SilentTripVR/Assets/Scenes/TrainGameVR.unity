@@ -7922,7 +7922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererData: {fileID: 11400000, guid: c40be3174f62c4acf8c1216858c64956, type: 2}
-  featureName: FullscreenIntensity
+  featureName: Blit
   anxietyMeter: {fileID: 1755241861}
 --- !u!114 &1755241861
 MonoBehaviour:

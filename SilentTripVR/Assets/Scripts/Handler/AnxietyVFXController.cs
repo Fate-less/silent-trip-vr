@@ -25,12 +25,12 @@ public class AnxietyVFXController : MonoBehaviour
     }
     void Update()
     {
-        material.SetFloat("FullscreenIntensity", anxietyMeter.anxiety);
+        material.SetFloat("_FullscreenIntensity", anxietyMeter.anxiety);
     }
 
     private void OnDestroy()
     {
-        material.SetFloat("FullscreenIntensity", 0);
+        material.SetFloat("_FullscreenIntensity", 0);
     }
 
     private bool TryGetFeature(out ScriptableRendererFeature feature)
