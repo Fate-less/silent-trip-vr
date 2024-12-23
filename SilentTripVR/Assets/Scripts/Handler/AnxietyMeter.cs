@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class AnxietyMeter : MonoBehaviour
 {
-    public float anxiety;
+    public float anxiety = 0f;
+
+    private void Update()
+    {
+        anxiety += 0.005f * Time.deltaTime;
+    }
 }

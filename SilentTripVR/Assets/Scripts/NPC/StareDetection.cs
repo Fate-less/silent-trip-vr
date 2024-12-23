@@ -17,6 +17,7 @@ public class StareDetection : MonoBehaviour
     private TextToSpeechAI textToSpeechAI;
     private TaskHandler taskHandler;
     private TaskList taskList;
+    private GameObject playerObject;
 
     private float stareTimer = 0.0f;
 
@@ -29,6 +30,7 @@ public class StareDetection : MonoBehaviour
         speechToTextAI = GameObject.Find("SpeechManager").GetComponent<SpeechToTextAI>();
         textToSpeechAI = GameObject.Find("TTSManager").GetComponent<TextToSpeechAI>();
         taskList = GetComponent<TaskList>();
+        playerObject = GameObject.Find("Player");
     }
 
     void Update()
@@ -59,6 +61,10 @@ public class StareDetection : MonoBehaviour
             domainIsOn = false;
             stareTimer = 0.0f;
             eyeClose();
+        }
+        if (domainIsOn)
+        {
+            playerObject.GetComponent<AnxietyMeter>().anxiety += 0.005f * Time.deltaTime;
         }
     }
 
