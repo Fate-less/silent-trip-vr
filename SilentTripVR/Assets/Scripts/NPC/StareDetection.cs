@@ -18,6 +18,7 @@ public class StareDetection : MonoBehaviour
     private TaskHandler taskHandler;
     private TaskList taskList;
     private GameObject playerObject;
+    private Coroutine domainCoroutine;
 
     private float stareTimer = 0.0f;
 
@@ -70,7 +71,12 @@ public class StareDetection : MonoBehaviour
 
     public void eyeStare()
     {
-        StartCoroutine(domainExpansion.Timestop(50, 10));
+        if (domainCoroutine != null)
+        {
+            StopCoroutine(domainCoroutine);
+            domainCoroutine = null;
+        }
+        domainCoroutine = StartCoroutine(domainExpansion.Timestop(50, 5));
         isStaring = true;
         domainIsOn = true;
         taskHandler.stareDetection = this;
@@ -83,7 +89,12 @@ public class StareDetection : MonoBehaviour
 
     public void eyeClose()
     {
-        StartCoroutine(domainExpansion.Timestop(0, 5));
+        if (domainCoroutine!=null)
+        {
+            StopCoroutine(domainCoroutine);
+            domainCoroutine = null;
+        }
+        domainCoroutine = StartCoroutine(domainExpansion.Timestop(0, 3));
         taskHandler.taskUI.SetActive(false);
         if (speechToTextAI.isRecognizerInitialized && speechToTextAI.isRecognitionActive)
         {
