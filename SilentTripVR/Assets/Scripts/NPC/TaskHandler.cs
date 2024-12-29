@@ -13,6 +13,7 @@ public class TaskHandler : MonoBehaviour
     public GameObject taskUI;
     public TextMeshProUGUI[] taskTMP;
     public Image[] checklist;
+    [HideInInspector] public float totalTaskCompleted;
 
     private void Start()
     {
@@ -87,6 +88,7 @@ public class TaskHandler : MonoBehaviour
         if (taskList.Task.Count == 0)
         {
             stareDetection.allTaskDone = true;
+            totalTaskCompleted++;
         }
     }
 }

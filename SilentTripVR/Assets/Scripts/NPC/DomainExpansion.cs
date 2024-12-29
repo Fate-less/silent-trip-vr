@@ -13,6 +13,10 @@ public class DomainExpansion : MonoBehaviour
 
     public IEnumerator Timestop(float endValue, float duration)
     {
+        if(shaderInteractor.enabled == false)
+        {
+            shaderInteractor.enabled = true;
+        }
         float elapsedTime = 0;
         float startValue = shaderInteractor.radius;
 
@@ -28,5 +32,6 @@ public class DomainExpansion : MonoBehaviour
         shaderInteractor.radius = endValue;
 
         Debug.Log("Time stopped...");
+        shaderInteractor.enabled = false;
     }
 }

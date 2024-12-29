@@ -11,11 +11,6 @@ public class FadeInNPC : MonoBehaviour
         spriteRend = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     public IEnumerator SpriteFade(SpriteRenderer sr, float endValue, float duration)
     {
         float elapsedTime = 0;
