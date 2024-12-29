@@ -8,9 +8,11 @@ public class NPCHandler : MonoBehaviour
     public List<GameObject> npcSecondCycle;
     public List<GameObject> npcThirdCycle;
     [HideInInspector] public int currentCycle = 1;
+    private TimeManager timeManager;
 
     private void Start()
     {
+        timeManager = GameObject.Find("TimeHandler").GetComponent<TimeManager>();
         for (int i = 0; i < npcSecondCycle.Count; i++)
         {
             SetActiveNPCSecondCycle(false);
@@ -59,11 +61,14 @@ public class NPCHandler : MonoBehaviour
         {
             SetActiveNPCSecondCycle(true);
         }
-        if(currentCycle == 2)
+        else if(currentCycle == 2)
         {
             SetActiveNPCThirdCycle(true);
         }
-        else { }
+        else if(currentCycle > 2)
+        {
+            timeManager.gameEndTransition.ShowResult();
+        }
 
     }
 }

@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.UI;
 
 public class GameEndTransition : MonoBehaviour
 {
     public TextMeshProUGUI statsTMP;
     public GameObject blackscreen;
+    [SerializeField] private int transitionDuration;
     private TaskHandler taskHandler;
 
     public void ShowResult()
@@ -30,6 +32,13 @@ public class GameEndTransition : MonoBehaviour
             statsTMP.text = "Luar biasa! Kamu sudah berhasil menunjukkan kemampuan interaksi sosialmu dengan sangat baik.";
         }
         blackscreen.SetActive(true);
-        StartCoroutine(blackscreen.GetComponent<FadeInImage>().ImageFade(blackscreen.GetComponent<Image>(), 1, 1));
+        StartCoroutine(blackscreen.GetComponent<FadeInImage>().ImageFade(blackscreen.GetComponent<Image>(), 1, transitionDuration));
+        StartCoroutine(TextFadeInTransition());
+    }
+
+    IEnumerator TextFadeInTransition()
+    {
+        yield return new WaitForSeconds(transitionDuration + 1);
+        statsTMP.gameObject.SetActive(true);
     }
 }

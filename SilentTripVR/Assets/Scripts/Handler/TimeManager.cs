@@ -5,6 +5,7 @@ using UnityEngine;
 public class TimeManager : MonoBehaviour
 {
     private NPCHandler npcHandler;
+    public GameEndTransition gameEndTransition;
     private void Start()
     {
         npcHandler = GameObject.Find("Passengers").GetComponent<NPCHandler>();
