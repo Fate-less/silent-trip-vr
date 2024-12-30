@@ -12,12 +12,15 @@ public class TextToSpeechAI : MonoBehaviour
     private string serviceRegion = "southeastasia";
 
     private SpeechSynthesizer synthesizer;
+    private TaskHandler taskHandler;
     public SimpleInteraction LLM_Interaction;
+    public SpeechToTextAI speechToTextAI;
 
     private void Start()
     {
         var config = SpeechConfig.FromSubscription(speechKey, serviceRegion);
         synthesizer = new SpeechSynthesizer(config);
+        taskHandler = GameObject.Find("TaskHandler").GetComponent<TaskHandler>();
     }
 
     public async void SpeakResponse(string responseText)
@@ -31,13 +34,17 @@ public class TextToSpeechAI : MonoBehaviour
         try
         {
             Debug.Log("Speaking: " + responseText);
-
+            await speechToTextAI.StopRecognitionAsync();
             // Perform speech synthesis
             using (var result = await synthesizer.SpeakTextAsync(responseText))
             {
                 if (result.Reason == ResultReason.SynthesizingAudioCompleted)
                 {
                     Debug.Log("Speech synthesis succeeded.");
+                    if (!taskHandler.stareDetection.allTaskDone)
+                    {
+                        await speechToTextAI.StartRecognitionAsync();
+                    }
                     LLM_Interaction.HideText();
                 }
                 else

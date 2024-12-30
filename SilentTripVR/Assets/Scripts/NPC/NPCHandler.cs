@@ -13,27 +13,23 @@ public class NPCHandler : MonoBehaviour
     private void Start()
     {
         timeManager = GameObject.Find("TimeHandler").GetComponent<TimeManager>();
-        for (int i = 0; i < npcSecondCycle.Count; i++)
-        {
-            SetActiveNPCSecondCycle(false);
-            SetActiveNPCThirdCycle(false);
-            npcSecondCycleFadeIn(0, 0.2f);
-            npcThirdCycleFadeIn(0, 0.2f);
-        }
+        StartCoroutine(delaySetup());
+        currentCycle = 1;
     }
 
     private void npcSecondCycleFadeIn(float endValue, float duration)
     {
         for (int i = 0; i < npcSecondCycle.Count; i++)
         {
-            npcSecondCycle[i].GetComponent<FadeInNPC>().SpriteFade(npcSecondCycle[i].GetComponent<SpriteRenderer>(), endValue, duration);
+            StartCoroutine(npcSecondCycle[i].GetComponent<FadeInNPC>().SpriteFade(npcSecondCycle[i].GetComponent<SpriteRenderer>(), endValue, duration));
         }
     }
     private void npcThirdCycleFadeIn(float endValue, float duration)
     {
         for (int i = 0; i < npcThirdCycle.Count; i++)
         {
-            npcThirdCycle[i].GetComponent<FadeInNPC>().SpriteFade(npcThirdCycle[i].GetComponent<SpriteRenderer>(), endValue, duration);
+
+            StartCoroutine(npcThirdCycle[i].GetComponent<FadeInNPC>().SpriteFade(npcThirdCycle[i].GetComponent<SpriteRenderer>(), endValue, duration));
         }
     }
     public void SetActiveNPCSecondCycle(bool isActive)
@@ -43,7 +39,10 @@ public class NPCHandler : MonoBehaviour
             npcSecondCycle[i].SetActive(isActive);
         }
         npcSecondCycleFadeIn(1, 1);
-        currentCycle = 2;
+        if (isActive)
+        {
+            currentCycle = 2;
+        }
     }
     public void SetActiveNPCThirdCycle(bool isActive)
     {
@@ -52,7 +51,10 @@ public class NPCHandler : MonoBehaviour
             npcThirdCycle[i].SetActive(isActive);
         }
         npcThirdCycleFadeIn(1, 1);
-        currentCycle = 3;
+        if (isActive)
+        {
+            currentCycle = 3;
+        }
     }
 
     public void NextCycle()
@@ -65,10 +67,19 @@ public class NPCHandler : MonoBehaviour
         {
             SetActiveNPCThirdCycle(true);
         }
-        else if(currentCycle > 2)
+        else if(currentCycle == 3)
         {
             timeManager.gameEndTransition.ShowResult();
         }
+        Debug.Log("Next NPC Cycle...");
+    }
 
+    IEnumerator delaySetup()
+    {
+        npcSecondCycleFadeIn(0, 0.2f);
+        npcThirdCycleFadeIn(0, 0.2f);
+        yield return new WaitForSeconds(0.5f);
+        SetActiveNPCSecondCycle(false);
+        SetActiveNPCThirdCycle(false);
     }
 }

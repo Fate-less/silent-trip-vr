@@ -7,6 +7,9 @@ public class TaskList : MonoBehaviour
     public List<string> Task;
     [HideInInspector] public int currentTaskSet;
     private TaskHandler taskHandler;
+    [HideInInspector] public bool firstTaskCleared = false;
+    [HideInInspector] public bool secondTaskCleared = false;
+    [HideInInspector] public bool thirdTaskCleared = false;
 
     private void Start()
     {
@@ -17,6 +20,18 @@ public class TaskList : MonoBehaviour
         for (int i = 0; i < Task.Count; i++)
         {
             taskHandler.taskTMP[i].text = Task[i];
+        }
+        if (!firstTaskCleared)
+        {
+            taskHandler.checklist[0].sprite = taskHandler.taskUncompletedSprite;
+        }
+        if (!secondTaskCleared)
+        {
+            taskHandler.checklist[1].sprite = taskHandler.taskUncompletedSprite;
+        }
+        if (!thirdTaskCleared)
+        {
+            taskHandler.checklist[2].sprite = taskHandler.taskUncompletedSprite;
         }
     }
     public void TaskSetOne()

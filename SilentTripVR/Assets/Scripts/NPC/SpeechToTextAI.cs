@@ -24,6 +24,7 @@ public class SpeechToTextAI : MonoBehaviour
     void Start()
     {
         LLM_Task = GameObject.Find("LLMTask").GetComponent<TaskCompleteDetection>();
+        InitializeRecognizer();
     }
 
     public async void InitializeRecognizer()
@@ -57,7 +58,7 @@ public class SpeechToTextAI : MonoBehaviour
         isRecognizerInitialized = true;
         Debug.Log("Speech recognizer initialized.");
 
-        await StartRecognitionAsync();
+        await StopRecognitionAsync();
     }
 
     void Update()
@@ -107,7 +108,7 @@ public class SpeechToTextAI : MonoBehaviour
     }
 
 
-    private async Task StartRecognitionAsync()
+    public async Task StartRecognitionAsync()
     {
         if (recognizer != null && !isRecognitionActive)
         {
@@ -117,7 +118,7 @@ public class SpeechToTextAI : MonoBehaviour
         }
     }
 
-    private async Task StopRecognitionAsync()
+    public async Task StopRecognitionAsync()
     {
         if (recognizer != null && isRecognitionActive)
         {
@@ -129,6 +130,11 @@ public class SpeechToTextAI : MonoBehaviour
 
     private void OnSpeechRecognized(string recognizedText)
     {
+        if (string.IsNullOrWhiteSpace(recognizedText))
+        {
+            Debug.LogWarning("No speech provided for text synthesis.");
+            return;
+        }
         // Send the recognized text to Llama
         LLM_Interaction.onInputFieldSubmit(recognizedText);
         LLM_Task.onInputFieldSubmit(recognizedText);

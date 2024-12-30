@@ -5,13 +5,18 @@ using UnityEngine;
 public class DomainExpansion : MonoBehaviour
 {
     private ShaderInteractor shaderInteractor;
+    public bool domainIsOn = false;
+    [HideInInspector] public SpeechToTextAI speechToTextAI;
+    [HideInInspector] public TextToSpeechAI textToSpeechAI;
 
     private void Start()
     {
         shaderInteractor = GetComponent<ShaderInteractor>();
+        speechToTextAI = GameObject.Find("SpeechManager").GetComponent<SpeechToTextAI>();
+        textToSpeechAI = GameObject.Find("TTSManager").GetComponent<TextToSpeechAI>();
     }
 
-    public IEnumerator Timestop(float endValue, float duration)
+    public IEnumerator Timestop(float endValue, float duration, bool activate)
     {
         if(shaderInteractor.enabled == false)
         {
@@ -32,6 +37,24 @@ public class DomainExpansion : MonoBehaviour
         shaderInteractor.radius = endValue;
 
         Debug.Log("Time stopped...");
+        domainIsOn = true;
         shaderInteractor.enabled = false;
+        if (activate)
+        {
+            TurnOnRecognition();
+        }
+        else
+        {
+            TurnOffRecognition();
+        }
+    }
+
+    public async void TurnOnRecognition()
+    {
+        await speechToTextAI.StartRecognitionAsync();
+    }
+    public async void TurnOffRecognition()
+    {
+        await speechToTextAI.StopRecognitionAsync();
     }
 }

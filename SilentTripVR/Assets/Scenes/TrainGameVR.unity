@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 58500811}
   - component: {fileID: 58500810}
   m_Layer: 0
-  m_Name: LLMCharacter
+  m_Name: LLMCharacter_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1671,6 +1671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskCompletedSprite: {fileID: 21300000, guid: 7d72ceabf6b1d294b9e5a83d905916b2, type: 3}
+  taskUncompletedSprite: {fileID: 0}
   stareDetection: {fileID: 0}
   taskUI: {fileID: 1676854264}
   taskTMP:
@@ -4601,6 +4602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stareDurationThreshold: 3
+  lookAwayDurationThreshold: 5
   isStaring: 0
   allTaskDone: 0
 --- !u!114 &871918132
@@ -4615,6 +4617,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5b3b0ffa55df444925f9cf63735643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  domainIsOn: 0
+  speechToTextAI: {fileID: 0}
+  textToSpeechAI: {fileID: 0}
 --- !u!114 &871918133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4645,6 +4650,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Task: []
   currentTaskSet: 0
+  firstTaskCleared: 0
+  secondTaskCleared: 0
+  thirdTaskCleared: 0
 --- !u!1 &895996143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5350,9 +5358,10 @@ GameObject:
   - component: {fileID: 1029102620}
   - component: {fileID: 1029102618}
   - component: {fileID: 1029102617}
+  - component: {fileID: 1029102622}
   - component: {fileID: 1029102624}
   - component: {fileID: 1029102623}
-  - component: {fileID: 1029102622}
+  - component: {fileID: 1029102625}
   - component: {fileID: 1029102621}
   m_Layer: 0
   m_Name: NPC_3
@@ -5376,6 +5385,7 @@ Transform:
   m_Children:
   - {fileID: 707178357}
   - {fileID: 1015132107}
+  - {fileID: 1461559645}
   m_Father: {fileID: 448150875}
   m_LocalEulerAnglesHint: {x: 0, y: 88.514, z: 0}
 --- !u!114 &1029102617
@@ -5477,6 +5487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Task: []
   currentTaskSet: 0
+  firstTaskCleared: 0
+  secondTaskCleared: 0
+  thirdTaskCleared: 0
 --- !u!114 &1029102622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5502,6 +5515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5b3b0ffa55df444925f9cf63735643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  domainIsOn: 0
+  speechToTextAI: {fileID: 0}
+  textToSpeechAI: {fileID: 0}
 --- !u!114 &1029102624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5514,9 +5530,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d374117c4d0da734eadcaedb9d708d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stareDurationThreshold: 10000
+  stareDurationThreshold: 3
+  lookAwayDurationThreshold: 5
   isStaring: 0
   allTaskDone: 0
+--- !u!114 &1029102625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029102615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9898ca92690864a28e9d37d7ba07036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  llmCharacter: {fileID: 1461559644}
+  playerText: {fileID: 227515338}
+  AIText: {fileID: 1348463549}
+  TTS_AI: {fileID: 1911544867}
 --- !u!4 &1072238522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1456ccb1f8980434ca20681add517300, type: 3}
@@ -6292,7 +6325,7 @@ MonoBehaviour:
   grammar: 
   cachePrompt: 1
   seed: 0
-  temperature: 0.2
+  temperature: 0.1
   topK: 40
   topP: 0.9
   minP: 0.05
@@ -6318,13 +6351,13 @@ MonoBehaviour:
     input is a greeting (Hi, Hello, What's up). You will answer 2 if and only if
     the user input is asking about weather. You will answer 3 if and only if the
     user input is asking opinion about the train. You will answer 4 if and only if
-    the user input is asking opinion about the train. You will answer 5 if and only
-    if the user input is asking opinion about how often you take this train. You
-    will answer 6 if and only if the user is commenting on the atmosphere inside
-    the train. You will answer 7 if and only if the user is complimenting you. You
-    will answer 8 if and only if the user is asking about the purpose of your trip.
-    You will answer 9 if and only if the user is asking about your daily activities.
-    Everything else will be answered 0."
+    the user input is introducing themself. You will answer 5 if and only if the
+    user input is asking about how often you take this train. You will answer 6 if
+    and only if the user is commenting on the atmosphere inside the train. You will
+    answer 7 if and only if the user is complimenting you. You will answer 8 if and
+    only if the user is asking about the purpose of your trip. You will answer 9
+    if and only if the user is asking about your daily activities. Everything else
+    will be answered 0."
   setNKeepToPrompt: 1
   chat: []
   grammarString: 
@@ -6846,6 +6879,7 @@ GameObject:
   - component: {fileID: 1457160919}
   - component: {fileID: 1457160918}
   - component: {fileID: 1457160917}
+  - component: {fileID: 1457160920}
   m_Layer: 0
   m_Name: blackScreen
   m_TagString: Untagged
@@ -6910,6 +6944,127 @@ RectTransform:
   m_AnchoredPosition: {x: 0.072143555, y: -0.09225464}
   m_SizeDelta: {x: 0.36857224, y: -0.11646271}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1457160920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457160916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f3b25d45912af4ba5285b44f8958d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1461559643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461559645}
+  - component: {fileID: 1461559644}
+  m_Layer: 0
+  m_Name: LLMCharacter_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1461559644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461559643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6c87a428fd5d0be9bbc686bdc8c3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  advancedOptions: 1
+  remote: 0
+  _llm: {fileID: 1486762030}
+  APIKey: 
+  host: localhost
+  port: 13333
+  numRetries: 10
+  save: 
+  saveCache: 0
+  debugPrompt: 0
+  numPredict: 256
+  slot: -1
+  grammar: 
+  cachePrompt: 1
+  seed: 0
+  temperature: 0.2
+  topK: 40
+  topP: 0.9
+  minP: 0.05
+  repeatPenalty: 1.1
+  presencePenalty: 0
+  frequencyPenalty: 0
+  tfsZ: 1
+  typicalP: 1
+  repeatLastN: 64
+  penalizeNl: 1
+  penaltyPrompt: 
+  mirostat: 0
+  mirostatTau: 5
+  mirostatEta: 0.1
+  nProbs: 0
+  ignoreEos: 0
+  nKeep: -1
+  stop: []
+  stream: 1
+  playerName: user
+  AIName: Lila
+  prompt: 'Name: Lila Mori
+
+    Age: 29
+
+    Gender: Female
+
+    Married: No
+
+    Pets:
+    A ginger cat named Mochi
+
+    Parents: Naoko Mori (mother, retired librarian),
+    Akira Mori (father, works abroad)
+
+    
+
+    Character Description:
+
+    You
+    are a quiet yet imaginative Game Artist working at Bawang Studio. Your daily
+    train rides are spent sketching characters and designing landscapes for your
+    latest game project. While introverted, you light up when talking about art,
+    creativity, and the joy of bringing stories to life through visuals. When players
+    interact with you, you often share insights about game design or offer encouragement
+    to aspiring artists.'
+  setNKeepToPrompt: 1
+  chat: []
+  grammarString: 
+--- !u!4 &1461559645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461559643}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.69787526, z: -0, w: 0.71621937}
+  m_LocalPosition: {x: 30.361973, y: 492.33347, z: 1032.377}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1029102616}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1486762029
 GameObject:
   m_ObjectHideFlags: 0
@@ -6945,7 +7100,7 @@ MonoBehaviour:
   numThreads: -1
   numGPULayers: 0
   debug: 0
-  parallelPrompts: 1
+  parallelPrompts: -1
   dontDestroyOnLoad: 1
   contextSize: 8192
   batchSize: 512
@@ -7882,9 +8037,10 @@ GameObject:
   - component: {fileID: 1627749607}
   - component: {fileID: 1627749605}
   - component: {fileID: 1627749604}
+  - component: {fileID: 1627749609}
   - component: {fileID: 1627749611}
   - component: {fileID: 1627749610}
-  - component: {fileID: 1627749609}
+  - component: {fileID: 1627749612}
   - component: {fileID: 1627749608}
   m_Layer: 0
   m_Name: NPC_2
@@ -7908,6 +8064,7 @@ Transform:
   m_Children:
   - {fileID: 725515648}
   - {fileID: 1596641510}
+  - {fileID: 1817600728}
   m_Father: {fileID: 448150875}
   m_LocalEulerAnglesHint: {x: 0, y: -140.825, z: 0}
 --- !u!114 &1627749604
@@ -8009,6 +8166,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Task: []
   currentTaskSet: 0
+  firstTaskCleared: 0
+  secondTaskCleared: 0
+  thirdTaskCleared: 0
 --- !u!114 &1627749609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8034,6 +8194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec5b3b0ffa55df444925f9cf63735643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  domainIsOn: 0
+  speechToTextAI: {fileID: 0}
+  textToSpeechAI: {fileID: 0}
 --- !u!114 &1627749611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8046,9 +8209,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d374117c4d0da734eadcaedb9d708d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stareDurationThreshold: 10000
+  stareDurationThreshold: 3
+  lookAwayDurationThreshold: 5
   isStaring: 0
   allTaskDone: 0
+--- !u!114 &1627749612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627749602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9898ca92690864a28e9d37d7ba07036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  llmCharacter: {fileID: 1817600727}
+  playerText: {fileID: 227515338}
+  AIText: {fileID: 1348463549}
+  TTS_AI: {fileID: 1911544867}
 --- !u!1 &1676854264
 GameObject:
   m_ObjectHideFlags: 0
@@ -8736,6 +8916,112 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817328086}
   m_CullTransparentMesh: 1
+--- !u!1 &1817600726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1817600728}
+  - component: {fileID: 1817600727}
+  m_Layer: 0
+  m_Name: LLMCharacter_2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1817600727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817600726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6c87a428fd5d0be9bbc686bdc8c3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  advancedOptions: 1
+  remote: 0
+  _llm: {fileID: 1486762030}
+  APIKey: 
+  host: localhost
+  port: 13333
+  numRetries: 10
+  save: 
+  saveCache: 0
+  debugPrompt: 0
+  numPredict: 256
+  slot: -1
+  grammar: 
+  cachePrompt: 1
+  seed: 0
+  temperature: 0.2
+  topK: 40
+  topP: 0.9
+  minP: 0.05
+  repeatPenalty: 1.1
+  presencePenalty: 0
+  frequencyPenalty: 0
+  tfsZ: 1
+  typicalP: 1
+  repeatLastN: 64
+  penalizeNl: 1
+  penaltyPrompt: 
+  mirostat: 0
+  mirostatTau: 5
+  mirostatEta: 0.1
+  nProbs: 0
+  ignoreEos: 0
+  nKeep: -1
+  stop: []
+  stream: 1
+  playerName: user
+  AIName: Sophia
+  prompt: 'Name: Sophia Harper
+
+    Age: 34
+
+    Gender: Female
+
+    Married:
+    No
+
+    Parents: Helen Harper (retired school teacher), Peter Harper (deceased)
+
+    
+
+    Character
+    Description:
+
+    You are a confident and charismatic writer working for the
+    local newspaper, The Beacon Gazette. You take the train every morning to the
+    city to uncover and report captivating stories. Despite being highly independent,
+    you have a deep connection with your family, often reminiscing about your late
+    father, who inspired you to pursue journalism. When players engage in conversation,
+    you radiate passion for storytelling and encourage them to share their dreams.'
+  setNKeepToPrompt: 1
+  chat: []
+  grammarString: 
+--- !u!4 &1817600728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817600726}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.94213104, z: -0, w: 0.33524498}
+  m_LocalPosition: {x: -805.70465, y: 492.48447, z: -645.80414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1627749603}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1852929912
 GameObject:
   m_ObjectHideFlags: 0
@@ -9278,6 +9564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LLM_Interaction: {fileID: 0}
+  speechToTextAI: {fileID: 806165321}
 --- !u!4 &1911544868
 Transform:
   m_ObjectHideFlags: 0

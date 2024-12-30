@@ -7,20 +7,20 @@ using LLMUnitySamples;
 public class StareDetection : MonoBehaviour
 {
     public float stareDurationThreshold = 3.0f;
+    public float lookAwayDurationThreshold = 5.0f;
     public bool isStaring = false;
     [HideInInspector] public bool allTaskDone = false;
     private SimpleInteraction chatbotAI;
     private DomainExpansion domainExpansion;
     private GameObject playerCamera;
-    private bool domainIsOn = false;
-    private SpeechToTextAI speechToTextAI;
-    private TextToSpeechAI textToSpeechAI;
+
     private TaskHandler taskHandler;
     private TaskList taskList;
     private GameObject playerObject;
     private Coroutine domainCoroutine;
 
     private float stareTimer = 0.0f;
+    private float lookAwayTimer = 0.0f;
 
     private void Start()
     {
@@ -28,8 +28,6 @@ public class StareDetection : MonoBehaviour
         domainExpansion = GetComponent<DomainExpansion>();
         playerCamera = GameObject.Find("Main Camera");
         chatbotAI = GetComponent<SimpleInteraction>();
-        speechToTextAI = GameObject.Find("SpeechManager").GetComponent<SpeechToTextAI>();
-        textToSpeechAI = GameObject.Find("TTSManager").GetComponent<TextToSpeechAI>();
         taskList = GetComponent<TaskList>();
         playerObject = GameObject.Find("Player");
     }
@@ -38,7 +36,7 @@ public class StareDetection : MonoBehaviour
     {
         Vector3 playerToTarget = transform.position - playerCamera.transform.position;
         float angle = Vector3.Angle(playerCamera.transform.forward, playerToTarget);
-        if (angle < 45f)
+        if (angle < 30f)
         {
             stareTimer += Time.deltaTime;
             if (stareTimer >= stareDurationThreshold && !isStaring && !allTaskDone)
@@ -48,22 +46,27 @@ public class StareDetection : MonoBehaviour
         }
         else
         {
-            if (domainIsOn)
+            if (domainExpansion.domainIsOn)
             {
-                isStaring = false;
-                domainIsOn = false;
-                stareTimer = 0.0f;
-                eyeClose();
+                lookAwayTimer += Time.deltaTime;
+                if(lookAwayTimer >= lookAwayDurationThreshold && isStaring)
+                {
+                    isStaring = false;
+                    domainExpansion.domainIsOn = false;
+                    stareTimer = 0.0f;
+                    eyeClose();
+                }
             }
         }
-        if(allTaskDone && domainIsOn)
+        if(allTaskDone && domainExpansion.domainIsOn)
         {
             isStaring = false;
-            domainIsOn = false;
             stareTimer = 0.0f;
+            StartCoroutine(ReduceAnxietyOverTime(playerObject, 1f));
+            this.enabled = false;
             eyeClose();
         }
-        if (domainIsOn)
+        if (domainExpansion.domainIsOn)
         {
             playerObject.GetComponent<AnxietyMeter>().anxiety += 0.005f * Time.deltaTime;
         }
@@ -76,13 +79,12 @@ public class StareDetection : MonoBehaviour
             StopCoroutine(domainCoroutine);
             domainCoroutine = null;
         }
-        domainCoroutine = StartCoroutine(domainExpansion.Timestop(50, 5));
+        domainCoroutine = StartCoroutine(domainExpansion.Timestop(50, 5, true));
         isStaring = true;
-        domainIsOn = true;
+        lookAwayTimer = 0.0f;
         taskHandler.stareDetection = this;
-        textToSpeechAI.LLM_Interaction = chatbotAI;
-        speechToTextAI.LLM_Interaction = chatbotAI;
-        speechToTextAI.InitializeRecognizer();
+        domainExpansion.textToSpeechAI.LLM_Interaction = chatbotAI;
+        domainExpansion.speechToTextAI.LLM_Interaction = chatbotAI;
         taskHandler.taskUI.SetActive(true);
         taskList.DisplayTask();
     }
@@ -94,11 +96,26 @@ public class StareDetection : MonoBehaviour
             StopCoroutine(domainCoroutine);
             domainCoroutine = null;
         }
-        domainCoroutine = StartCoroutine(domainExpansion.Timestop(0, 3));
+        domainCoroutine = StartCoroutine(domainExpansion.Timestop(0, 3, false));
         taskHandler.taskUI.SetActive(false);
-        if (speechToTextAI.isRecognizerInitialized && speechToTextAI.isRecognitionActive)
-        {
-            speechToTextAI.recognizer.StopContinuousRecognitionAsync().Wait();
-        }
     }
+
+    IEnumerator ReduceAnxietyOverTime(GameObject playerObject, float duration)
+    {
+        AnxietyMeter anxietyMeter = playerObject.GetComponent<AnxietyMeter>();
+        float startValue = anxietyMeter.anxiety;
+        float endValue = 0f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            anxietyMeter.anxiety = Mathf.Lerp(startValue, endValue, t);
+            yield return null;
+        }
+
+        anxietyMeter.anxiety = endValue;
+    }
+
 }

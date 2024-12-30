@@ -12,6 +12,11 @@ public class GameEndTransition : MonoBehaviour
     [SerializeField] private int transitionDuration;
     private TaskHandler taskHandler;
 
+    private void Start()
+    {
+        taskHandler = GameObject.Find("TaskHandler").GetComponent<TaskHandler>();
+    }
+
     public void ShowResult()
     {
         blackscreen.GetComponent<Image>().color = Color.clear;
